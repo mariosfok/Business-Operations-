@@ -155,3 +155,44 @@ body {
 .page-content {
     padding: 30px;
 }
+
+/* tickets */
+.tickets-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ticket-row {
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ticket-row h3 {
+    margin: 0 0 6px;
+}
+
+.ticket-row p {
+    margin: 0;
+    color: #777;
+}
+
+.ticket-row span {
+    font-size: 14px;
+    font-weight: bold;
+}
+.ticket-row:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
