@@ -6,8 +6,12 @@ import Tickets from "./pages/Tickets";
 import Employees from "./pages/Employees";
 import Layout from "./components/Layout";
 import CreateTicket from "./pages/CreateTicket";
+import { useState } from "react";
+import ticketsData from "./data/tickets";
 
 function App() {
+
+    const [tickets, setTickets] = useState(ticketsData);
     return (
         <BrowserRouter>
 
