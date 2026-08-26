@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Tickets from "./pages/Tickets";
 import Employees from "./pages/Employees";
 import Layout from "./components/Layout";
+import CreateTicket from "./pages/CreateTicket";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/tickets" element={<Tickets />} />
                     <Route path="/employees" element={<Employees />} />
                     <Route path="/tickets/:id" element={<TicketDetails />} />
+                    <Route path="/tickets/new" element={<CreateTicket />} />
 
                 </Route>
 

@@ -25,6 +25,12 @@ function Tickets() {
             <h1>Tickets</h1>
 
             <p>Manage and monitor internal service requests.</p>
+            <Link
+                to="/tickets/new"
+                className="create-ticket-button"
+            >
+              + Create Ticket
+            </Link>
 
             <div className="ticket-filters">
 
