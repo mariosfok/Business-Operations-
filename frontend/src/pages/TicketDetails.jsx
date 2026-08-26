@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import tickets from "../data/tickets";
 
 function TicketDetails() {
@@ -9,16 +10,28 @@ function TicketDetails() {
         (ticket) => ticket.id === Number(id)
     );
 
+    const [status, setStatus] = useState(ticket?.status || "");
+    const [priority, setPriority] = useState(ticket?.priority || "");
+    const [assignedTo, setAssignedTo] = useState(ticket?.assignedTo || "");
+
     if (!ticket) {
         return (
             <div>
                 <h1>Ticket not found</h1>
+
+                <Link to="/tickets">
+                    Back to Tickets
+                </Link>
             </div>
         );
     }
 
     return (
         <div className="ticket-details">
+
+            <Link to="/tickets" className="back-link">
+                ← Back to Tickets
+            </Link>
 
             <h1>{ticket.title}</h1>
 
@@ -32,18 +45,52 @@ function TicketDetails() {
                 </div>
 
                 <div>
-                    <strong>Priority</strong>
-                    <p>{ticket.priority}</p>
+                    <strong>Status</strong>
+
+                    <select
+                        value={status}
+                        onChange={(event) =>
+                            setStatus(event.target.value)
+                        }
+                    >
+                        <option value="OPEN">Open</option>
+                        <option value="IN_PROGRESS">
+                            In Progress
+                        </option>
+                        <option value="COMPLETED">
+                            Completed
+                        </option>
+                    </select>
                 </div>
 
                 <div>
-                    <strong>Status</strong>
-                    <p>{ticket.status}</p>
+                    <strong>Priority</strong>
+
+                    <select
+                        value={priority}
+                        onChange={(event) =>
+                            setPriority(event.target.value)
+                        }
+                    >
+                        <option value="LOW">Low</option>
+                        <option value="MEDIUM">Medium</option>
+                        <option value="HIGH">High</option>
+                    </select>
                 </div>
 
                 <div>
                     <strong>Assigned To</strong>
-                    <p>{ticket.assignedTo}</p>
+
+                    <select
+                        value={assignedTo}
+                        onChange={(event) =>
+                            setAssignedTo(event.target.value)
+                        }
+                    >
+                        <option value="George">George</option>
+                        <option value="Maria">Maria</option>
+                        <option value="Alex">Alex</option>
+                    </select>
                 </div>
 
             </div>

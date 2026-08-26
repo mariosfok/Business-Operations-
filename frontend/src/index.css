@@ -196,3 +196,20 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     cursor: pointer;
 }
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #555;
+}
+
+.ticket-info select {
+    display: block;
+    margin-top: 8px;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    min-width: 150px;
+}
